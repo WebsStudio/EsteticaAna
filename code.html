@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Centre d'Estètica ANA | Bellesa i Benestar Inca</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+@layer base{
+  html,body{margin:0;padding:0;}
+  body{overscroll-behavior:none;}
+  main>:first-child{margin-top:0!important;}
+  main>:last-child{margin-bottom:0!important;}
+}
+::-webkit-scrollbar{display:none;}
+
+/* Keyframe Animations */
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes gentleDrift {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(15px, -15px) scale(1.05); }
+}
+
+@keyframes slowRotate {
+  from { transform: rotate(12deg); }
+  50% { transform: rotate(16deg) translateY(-4px); }
+  to { transform: rotate(12deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
+  50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+}
+
+.animate-float {
+  animation: subtleFloat 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: subtleFloat 6s ease-in-out 2s infinite;
+}
+
+.animate-drift {
+  animation: gentleDrift 14s ease-in-out infinite alternate;
+}
+
+.animate-stamp {
+  animation: slowRotate 7s ease-in-out infinite;
+}
+
+.pulse-glow-whatsapp {
+  animation: pulseGlow 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scroll reveal initial and active styles */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "secondary-fixed": "#ffdf99", "on-primary-fixed": "#00201d", "surface-container-highest": "#d3e4fe", "surface-variant": "#d3e4fe", "primary-fixed-dim": "#80d5cb", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "on-secondary-fixed": "#251a00", "on-primary-container": "#a3faef", "tertiary-fixed": "#71f8e4", "on-tertiary": "#ffffff", "primary-fixed": "#9cf2e8", "surface-bright": "#f8f9ff", "on-surface": "#0b1c30", "charcoal-text": "#1E293B", "secondary-fixed-dim": "#ecc15a", "surface-container-high": "#dce9ff", "on-secondary-container": "#765900", "on-tertiary-fixed": "#00201c", "whatsapp-green": "#25D366", "outline-variant": "#bdc9c6", "inverse-primary": "#80d5cb", "surface-dim": "#cbdbf5", "bronze-accent": "#B45309", "on-secondary-fixed-variant": "#5a4300", "tertiary": "#005c52", "on-primary-fixed-variant": "#00504a", "on-tertiary-fixed-variant": "#005048", "surface-sand-light": "#FAF7F2", "surface-sand-subtle": "#F3ECE2", "tertiary-container": "#00776b", "tertiary-fixed-dim": "#4fdbc8", "surface-container": "#e5eeff", "surface-tint": "#006a63", "secondary-container": "#fed269", "primary": "#005c55", "surface-container-low": "#eff4ff", "primary-container": "#0f766e", "surface": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "on-error-container": "#93000a", "secondary": "#775a00", "on-background": "#0b1c30", "error": "#ba1a1a", "on-tertiary-container": "#84ffec", "background": "#f8f9ff", "inverse-surface": "#213145", "sage-muted": "#2DD4BF", "on-primary": "#ffffff", "error-container": "#ffdad6", "on-surface-variant": "#3e4947", "outline": "#6e7977" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "1rem", "space-xs": "0.375rem", "space-md": "1.25rem", "margin": "3rem", "space-sm": "0.75rem", "gutter": "1.5rem", "space-xl": "3.5rem", "space-lg": "2rem", "margin-mobile": "1.25rem" }, "fontFamily": { "body-sm": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Playfair Display" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-sm": [ "Playfair Display" ], "display-lg": [ "Playfair Display" ], "headline-lg": [ "Playfair Display" ], "label-sm": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Playfair Display" ], "label-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ] }, "fontSize": { "body-sm": [ "13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "display-lg-mobile": [ "38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "body-md": [ "15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "500" } ], "label-lg": [ "15px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-md": [ "26px", { "lineHeight": "34px", "letterSpacing": "0em", "fontWeight": "500" } ] } } } };</script></head><body class="bg-surface-sand-light text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header"><div class="bg-primary text-on-primary text-[12px] py-1.5 px-6 lg:px-12 transition-all"><div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4"><div class="flex items-center gap-6"><a class="flex items-center gap-1.5 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-200" href="tel:971500601"><span class="material-symbols-outlined text-[15px]">call</span><span>971 500 601</span></a><a class="hidden sm:flex items-center gap-1.5 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-200" href="mailto:info@centredesteticaana.es"><span class="material-symbols-outlined text-[15px]">mail</span><span>info@centredesteticaana.es</span></a><div class="hidden xl:flex items-center gap-1.5 opacity-80"><span class="material-symbols-outlined text-[15px]">schedule</span><span>M-V: 9:30h - 20:00h | Sáb: 9:00h - 16:00h</span></div></div><div class="flex items-center gap-4 ml-auto"><div class="hidden md:flex items-center gap-2"><span class="material-symbols-outlined text-secondary-fixed text-[14px] animate-pulse">verified</span><span class="tracking-wide text-[11px] uppercase text-secondary-fixed font-medium">23 Anys d'experiència a Inca</span></div><div class="flex items-center bg-primary-container/40 rounded-full px-2 py-0.5 text-[11px] font-semibold tracking-wider"><button class="px-1.5 py-0.5 rounded-full text-on-primary bg-primary transition-all" type="button">ES</button><span class="opacity-40">|</span><button class="px-1.5 py-0.5 rounded-full text-on-primary/80 hover:text-on-primary transition-colors" type="button">CA</button></div></div></div></div><div class="bg-surface-container-lowest/85 backdrop-blur-xl border-b border-primary/5 transition-all duration-300 shadow-[0_4px_20px_-2px_rgba(15,118,110,0.06)]" id="header-nav"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-3.5"><img alt="Centre d'Estètica ANA Logo" class="h-8 w-auto object-contain transition-transform duration-300 hover:rotate-3 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1V-W3dK2xZiX92CrUcSqxy9nkVUVDk7oJ2pHtBoOFNVS_jEmUZqIxLvVdjYHPdLXpqgVs8zP6iLqavUTvn0iiYml0g0hWipRuEU15iVGfxW4gHrMGl8KXKn-JhAQYPOBCK2J2SaArDvV6WJNtaFQaF1SxQFiqWsf0z2JejAWgoLo9VDFvrERX8FS4xpIARA9y1fZpgrZ11b_egGizSi9e_QzZPj01nQOWc6WPKtXtlJ1q4igJ8Imeit6r0"/><a class="flex flex-col text-left group" data-path="inicio" href="#"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary leading-none group-hover:text-primary-container transition-colors">ANA</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant text-[9px] mt-1">Estètica &amp; Benestar</span></a></div><nav class="hidden lg:flex items-center gap-6" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-all duration-200 text-primary font-semibold hover:text-primary-container hover:-translate-y-0.5" data-path="inicio" href="#">Inicio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all duration-200" data-path="servicios" href="#">Servicios</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all duration-200" data-path="aparatologia-avanzada" href="#">Aparatología</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all duration-200" data-path="servicio-a-domicilio" href="#">A Domicilio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all duration-200" data-path="sobre-nosotros" href="#">Sobre Nosotros</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all duration-200" data-path="testimonios" href="#">Testimonios</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all duration-200" data-path="contacto" href="#">Contacto</a></nav><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-whatsapp-green text-surface-container-lowest font-label-md text-label-md font-semibold hover:opacity-95 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md transition-all duration-300" href="https://wa.me/34971500601" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span>WhatsApp</span></a><a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-container text-surface-container-lowest font-label-md text-label-md font-semibold hover:bg-primary hover:scale-105 active:scale-95 hover:ring-4 hover:ring-teal-500/20 transition-all duration-300 shadow-[0_4px_14px_rgba(15,118,110,0.25)]" data-path="reservar-cita" href="#"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span>Pedir Cita</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 hover:scale-110 transition-transform duration-200"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-28 bg-surface-sand-light min-h-[calc(100vh-160px)]"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-sand-light pb-24 md:pb-32">
+<!-- Atmospheric Ambient Glows with slow drifting animation -->
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[720px] bg-primary/5 rounded-full blur-3xl pointer-events-none animate-drift"></div>
+<div class="absolute top-1/3 -right-48 w-96 h-96 bg-secondary-fixed/20 rounded-full blur-3xl pointer-events-none animate-drift" style="animation-delay: -5s;"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 pt-6 md:pt-12">
+<!-- Top Tagline & Heritage Badge -->
+<div class="flex flex-wrap items-center gap-3 mb-6 reveal-on-scroll">
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-lowest shadow-sm hover:shadow text-primary font-label-sm text-label-sm uppercase tracking-widest transition-transform duration-300 hover:-translate-y-0.5">
+<span class="material-symbols-outlined text-[16px] text-bronze-accent" style="font-variation-settings: 'FILL' 1;">eco</span>
+          Estètica Avançada &amp; Bellesa Integrativa
+        </span>
+<span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed/30 text-secondary font-label-sm text-label-sm font-semibold tracking-wide transition-transform duration-300 hover:-translate-y-0.5">
+<span class="material-symbols-outlined text-[15px] animate-pulse">verified</span>
+          Des de 2001 a Inca
+        </span>
+</div>
+<!-- Hero Asymmetric Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Left Column: Copy & CTAs -->
+<div class="lg:col-span-7 space-y-8 reveal-on-scroll">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight text-balance leading-none">
+            Tu oasis de belleza y bienestar en <span class="italic font-normal text-on-surface">Mallorca</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Más de <span class="text-primary font-semibold">23 años cuidando de ti</span> con tratamientos personalizados, aparatología avanzada de última generación y terapias naturales en el corazón de Inca.
+          </p>
+<!-- CTAs Bar -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+<a class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-surface-container-lowest font-label-lg text-label-lg shadow-lg hover:bg-primary-container hover:shadow-xl hover:-translate-y-1 hover:scale-105 active:scale-95 hover:ring-4 hover:ring-teal-500/20 transition-all duration-300 group" href="#reserva-rapida">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">calendar_month</span>
+<span>Reservar Cita Ahora</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm hover:shadow-md hover:bg-surface-sand-subtle hover:text-primary-container hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition-all duration-300" href="#servicios-catalogo">
+<span>Explorar Tratamientos</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:translate-y-1">arrow_downward</span>
+</a>
+<a class="inline-flex sm:hidden items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-whatsapp-green text-surface-container-lowest font-label-md text-label-md font-semibold hover:scale-105 active:scale-95 transition-all duration-300 shadow-md" href="https://wa.me/34971500601" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>WhatsApp Directo</span>
+</a>
+</div>
+<!-- Trust Badges Row with hover float and micro-lift -->
+<div class="grid grid-cols-3 gap-4 pt-6 max-w-xl">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md border border-transparent hover:border-teal-500/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col gap-1 cursor-default">
+<div class="flex items-center gap-1.5 text-bronze-accent">
+<span class="material-symbols-outlined text-[18px] transition-transform duration-300 hover:rotate-12" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">4.9 / 5</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Valoración Clientes</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md border border-transparent hover:border-teal-500/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col gap-1 cursor-default">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px] transition-transform duration-300 hover:scale-110">workspace_premium</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">+23 Años</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">En Inca, Mallorca</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md border border-transparent hover:border-teal-500/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col gap-1 cursor-default">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-[18px] transition-transform duration-300 hover:rotate-6">verified_user</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">100%</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Personal Certificado</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Composition with Organic Imagery -->
+<div class="lg:col-span-5 relative reveal-on-scroll" style="transition-delay: 150ms;">
+<!-- Main Organic Frame -->
+<div class="relative mx-auto max-w-md lg:max-w-none group">
+<div class="relative overflow-hidden rounded-3xl shadow-xl aspect-[4/5] bg-surface-sand-subtle border border-primary/5 transition-all duration-500 group-hover:shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Warm and luminous luxury beauty salon treatment suite in Inca Mallorca with tranquil Mediterranean stone elements, soft linen fabrics, warm botanical aromatherapy candles, and gentle hands performing holistic facial massage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNVhHygZ-zVl74-QGlbdST91sTwFpsQ1XNtJ96RxOiHmlDb08rf9DY0pAZFDJ-hTdlPpn1AfafwcowBFG0ADZfKbzId0KpO8aYjpGYDviNCHfQ9ddWvjosC3_9ajenCGwBo28yNFp0n2eVLDizdi_hJRsYCYL2W7Xa_Zwfj_9-m7TFTXYQ68QTIS8futD_h-MVLWRDdob1L1y0_3bzZUd7_ylDgFBm9W7RlvEd2r5LuIxlQJkWuWtg"/>
+<!-- Frosted Glass Card Floating Over Image with gentle breathing animation -->
+<div class="absolute bottom-5 inset-x-5 p-4 rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md shadow-lg flex items-center gap-4 animate-float border border-white/40 transition-transform duration-300 hover:scale-[1.02]">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:rotate-6">
+<span class="material-symbols-outlined text-[24px]">spa</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary font-semibold">Tratamiento Estrella</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">EndoSpheras &amp; Drenaje Botánico</p>
+</div>
+<div class="ml-auto text-right">
+<span class="font-label-sm text-label-sm text-bronze-accent font-semibold uppercase">Resultados</span>
+<p class="font-headline-sm text-headline-sm text-primary font-bold">1ª Sesión</p>
+</div>
+</div>
+</div>
+<!-- Floating Stamp Accent with gentle slow rotate -->
+<div class="absolute -top-6 -right-6 hidden sm:flex flex-col items-center justify-center w-28 h-28 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-md animate-stamp cursor-default hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[24px] mb-0.5">local_florist</span>
+<span class="font-label-sm text-label-sm font-bold tracking-tight text-center leading-tight">INCA<br/>DESDE 2001</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- VALORES DIFERENCIALES (3 ORIGINALES ELEVADOS) -->
+<section class="w-full bg-surface-sand-subtle py-16 md:py-24">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-3xl mx-auto mb-14 space-y-3 reveal-on-scroll">
+<span class="font-label-sm text-label-sm text-bronze-accent font-semibold uppercase tracking-widest">Nuestros Pilares Fundamentales</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">El compromiso de Centre d'Estètica ANA</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Desde hace más de dos décadas velamos por una experiencia de calma sin prisas, profesionalidad rigurosa y calidez humana.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pilar 1: Puntualidad -->
+<div class="reveal-on-scroll bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group" style="transition-delay: 50ms;">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-surface-container-lowest group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider">Cero esperas</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-3 group-hover:text-primary transition-colors">Puntualidad Absoluta</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Entendemos el inestimable valor de tu tiempo. Diseñamos nuestras agendas con holgura para asegurar que comiences tu sesión a la hora prevista, garantizando un servicio eficiente, sin prisas y sin demoras.
+          </p>
+</div>
+<!-- Pilar 2: Trato Agradable y Casero -->
+<div class="reveal-on-scroll bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group" style="transition-delay: 150ms;">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed/40 text-secondary flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-surface-container-lowest group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-[30px] group-hover:scale-125 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider">Calidez familiar</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-3 group-hover:text-primary transition-colors">Trato Agradable y Casero</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Creamos una atmósfera donde te sientes en tu propio hogar. El cariño, la sonrisa sincera y la escucha atenta de nuestro equipo convierten cada visita en un reencuentro de confianza y serenidad total.
+          </p>
+</div>
+<!-- Pilar 3: Variedad de Servicios -->
+<div class="reveal-on-scroll bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group" style="transition-delay: 250ms;">
+<div class="w-14 h-14 rounded-2xl bg-tertiary/10 text-tertiary flex items-center justify-center mb-6 group-hover:bg-tertiary group-hover:text-surface-container-lowest group-hover:-rotate-6 group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">dataset</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider">Atención 360°</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-3 group-hover:text-primary transition-colors">Variedad Integral</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Desde terapias milenarias como el Reiki hasta tecnología médico-estética avanzada (EndoSpheras, TermoBeauty, Presoterapia), manicuras spa y tratamientos corporales. Todo en un único centro.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CATÁLOGO COMPLETO DE SERVICIOS CON FILTRO INTERACTIVO -->
+<section class="w-full bg-surface-sand-light py-20 md:py-32" id="servicios-catalogo">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
+<div class="space-y-3 max-w-2xl">
+<span class="font-label-sm text-label-sm text-bronze-accent font-semibold uppercase tracking-widest">Carta de Tratamientos</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Servicios de Centre d'Estètica ANA</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Protocolos específicos adaptados a cada tipo de piel, cuerpo y momento vital. Selecciona tu categoría de interés.</p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:text-primary-container transition-all hover:translate-x-1 duration-200 group" href="#reserva-rapida">
+<span>Consultar disponibilidad semanal</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<!-- Filtros interactivos de categoría con micro-interacciones -->
+<div class="flex flex-wrap items-center gap-2 mb-10 pb-2 overflow-x-auto reveal-on-scroll">
+<button class="service-filter-btn px-5 py-2.5 rounded-full text-label-md font-label-md transition-all duration-300 hover:scale-105 active:scale-95 bg-primary text-surface-container-lowest shadow-sm" data-filter="all" type="button">Todos los Servicios</button>
+<button class="service-filter-btn px-5 py-2.5 rounded-full text-label-md font-label-md transition-all duration-300 hover:scale-105 active:scale-95 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-sand-subtle shadow-xs" data-filter="terapias" type="button">Terapias Naturales</button>
+<button class="service-filter-btn px-5 py-2.5 rounded-full text-label-md font-label-md transition-all duration-300 hover:scale-105 active:scale-95 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-sand-subtle shadow-xs" data-filter="aparatologia" type="button">Aparatología</button>
+<button class="service-filter-btn px-5 py-2.5 rounded-full text-label-md font-label-md transition-all duration-300 hover:scale-105 active:scale-95 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-sand-subtle shadow-xs" data-filter="facial" type="button">Facial &amp; Ojos</button>
+<button class="service-filter-btn px-5 py-2.5 rounded-full text-label-md font-label-md transition-all duration-300 hover:scale-105 active:scale-95 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-sand-subtle shadow-xs" data-filter="corporal" type="button">Masajes &amp; Corporal</button>
+<button class="service-filter-btn px-5 py-2.5 rounded-full text-label-md font-label-md transition-all duration-300 hover:scale-105 active:scale-95 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-sand-subtle shadow-xs" data-filter="manos-pies" type="button">Manos &amp; Pies</button>
+<button class="service-filter-btn px-5 py-2.5 rounded-full text-label-md font-label-md transition-all duration-300 hover:scale-105 active:scale-95 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-sand-subtle shadow-xs" data-filter="depilacion" type="button">Depilaciones</button>
+</div>
+<!-- Grid de 7 Servicios Originales con animaciones de elevación y zoom -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+<!-- 1. Terapias Naturales -->
+<article class="service-card group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col reveal-on-scroll" data-category="terapias" style="transition-delay: 50ms;">
+<div class="relative h-56 w-full overflow-hidden bg-surface-sand-subtle">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Warm holistic therapist hands hovering over calming chakra stones with soft sage botanical essence in an authentic wellness sanctuary in Mallorca." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcFgY7edwWDsZWoxmnfrHAO9x4Y-s0fEgI0WaNg9CULZT57hRn4Z41pP9m0OXBxwTrthL_YW4UsL5Do7jb13alR_bEvw09Wp05usocd7HtVJhdjgRvLaTffrfA-rApkFvnSUtamZUl0sFkeYrPGmDHffuaGJYUiEscXU0mnIm4WTU6b9ahJ25vtc56GPbU8qNTTN-orMdNruLJqpMCDjHgh0sz_XIUyGl9LxzYPR3Vh8hY1SorGC5W"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm font-label-sm text-label-sm font-semibold text-primary transition-transform duration-300 group-hover:scale-105">Equilibrio Holístico</span>
+</div>
+<div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Duración: 50 - 75 min</span>
+<span class="text-bronze-accent font-semibold">Terapia Bioenergética</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Terapias Naturales</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Sesiones profundas de <strong class="text-on-surface font-semibold">Reiki, Orazani y Barras de Access</strong>, diseñadas para desbloquear puntos energéticos, reducir el estrés acumulado y devolver la paz mental y física a tu organismo.
+              </p>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-surface-container-lowest font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:scale-105 active:scale-95 transition-all duration-300 group/btn" href="#reserva-rapida">
+<span>Reservar Servicio</span>
+<span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Inca, Mallorca</span>
+</div>
+</div>
+</article>
+<!-- 2. Depilaciones -->
+<article class="service-card group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col reveal-on-scroll" data-category="depilacion" style="transition-delay: 100ms;">
+<div class="relative h-56 w-full overflow-hidden bg-surface-sand-subtle">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="High precision modern laser hair removal treatment session performed gently on smooth skin in a clean clinical aesthetic cabin in Inca." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoUg4trQ60Neco5WXi6MMqfjTwZPgRL4_e5HEvramIi_zzKMpFu7oja-Y18fA01tOjOYj-BQtmHaRuq6HPxyYLmG6IT4HPFks0ZVuP0T7gUTPxoCclaXNMcYFDqWTUlgCh_H6Mm7EWM8WBaqwG_zFsWLfh33BZaWt7PwK5YY18nByFvm2YppqprSZVdvCICQLyHPSeRMGn8EQOsm8V10-4d5K6mX3gzH3PawlLjqJT12I6jsJzTZ13"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm font-label-sm text-label-sm font-semibold text-primary transition-transform duration-300 group-hover:scale-105">Suavidad Duradera</span>
+</div>
+<div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Sesiones personalizadas</span>
+<span class="text-bronze-accent font-semibold">Láser &amp; Ceras</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Depilación Integral</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Métodos adaptados a cada tipo de dermis y sensibilidad: <strong class="text-on-surface font-semibold">Láser avanzado indoloro, cera tibia desechable y cera caliente tradicional</strong> formulada con resinas calmantes para un acabado sedoso.
+              </p>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-surface-container-lowest font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:scale-105 active:scale-95 transition-all duration-300 group/btn" href="#reserva-rapida">
+<span>Reservar Servicio</span>
+<span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Higiene clínica</span>
+</div>
+</div>
+</article>
+<!-- 3. Manos y Pies -->
+<article class="service-card group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col reveal-on-scroll" data-category="manos-pies" style="transition-delay: 150ms;">
+<div class="relative h-56 w-full overflow-hidden bg-surface-sand-subtle">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Elegant luxury manicure and spa pedicure with gentle cuticle care warm organic oils and perfectly styled healthy polished nails in natural neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsIJX4utfsfuuSPPQ5yFdYdTnbf6bpA7SuAPDuSn_Rk2TFMZbwifewuA6Ak32HflY8A4uaBlKu8zWpum_oudT-uQx3MIgOXuMywS1V1w-aL2P2PQNHSwZ-L13jzUQkk_OO3we3tEupGh4nDD_8uRb3164xIoHsx5gjgQ4J7jBH5G0bqs8054A4hoFdfrxMFS2a7a7KGirbDbt-ACkC4i32aS7ChIUJabqrSlfl4rjJXfKWNC0xQgdH"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm font-label-sm text-label-sm font-semibold text-primary transition-transform duration-300 group-hover:scale-105">Tratamiento Reparador</span>
+</div>
+<div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Duración: 45 - 60 min</span>
+<span class="text-bronze-accent font-semibold">Salud Podal &amp; Ungueal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Manos y Pies Spa</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Cuidado integral de manicura y pedicura estética. Tratamientos nutritivos intensivos específicos para <strong class="text-on-surface font-semibold">uñas deshidratadas, corchadas o rompedizas</strong>, devolviendo fuerza, suavidad y brillo natural.
+              </p>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-surface-container-lowest font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:scale-105 active:scale-95 transition-all duration-300 group/btn" href="#reserva-rapida">
+<span>Reservar Servicio</span>
+<span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Esmaltado prémium</span>
+</div>
+</div>
+</article>
+<!-- 4. Masajes -->
+<article class="service-card group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col reveal-on-scroll" data-category="corporal" style="transition-delay: 50ms;">
+<div class="relative h-56 w-full overflow-hidden bg-surface-sand-subtle">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Soothing therapeutic body massage therapy session on back and shoulders using warm botanical Mediterranean essential oils in low warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCItB2MrHeorGTjiJy4neRjZYXCfOgI81GP8ykb4LqBuwPufQtdc96ufC4oBZqcyl2TF82JcWNqh2mzlzpBmudykrzTWjDxgpRHS4uxcWoCRD8XJfBObx51IkJWd5iXtOEAwBh0vcfY6h7wLWDeg4HAY8nI2sJJNwg0uf3_DeP32SacsXvdhx4ZOjlK-YjQG3dJ9LPhAuxqQK1EHwZQmS8WgScFslbN7Fg13CDHZvX4w247MoNTilZc"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm font-label-sm text-label-sm font-semibold text-primary transition-transform duration-300 group-hover:scale-105">Alivio &amp; Relax</span>
+</div>
+<div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Duración: 30 - 60 min</span>
+<span class="text-bronze-accent font-semibold">Terapéutico &amp; Circulatorio</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Masajes Terapéuticos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Desconexión corporal profunda: <strong class="text-on-surface font-semibold">masajes descontracturantes de espalda, masajes relajantes sensoriales, drenaje circulatorio</strong> y protocolos para piernas cansadas que revitalizan tus extremidades.
+              </p>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-surface-container-lowest font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:scale-105 active:scale-95 transition-all duration-300 group/btn" href="#reserva-rapida">
+<span>Reservar Servicio</span>
+<span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Aromaterapia</span>
+</div>
+</div>
+</article>
+<!-- 5. Tratamientos Faciales -->
+<article class="service-card group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col reveal-on-scroll" data-category="facial" style="transition-delay: 100ms;">
+<div class="relative h-56 w-full overflow-hidden bg-surface-sand-subtle">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Gentle relaxing clinical facial cleansing treatment applying rejuvenating collagen mask and botanical serum on pristine skin in a serene modern treatment room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-gqxF4LzQEG5UJOKNGbUbUkvmm8QD1G9GyX0BnqYGQHBghLZiRRVfArHzNQ9Vqk9yMrcDNrVKC9vJAWABwd24Tzo6zu41H-1I2FElTvZK0108mBo5ew4j_Q_TpnHGlpXFprTKcOhbMDaFXJfve9laBuSqYePBY2QzuBq8oaSHTcAEwKS3ZQ7zop4f1suWlrJT1apAUbkFcGWXglp_i_zhVfFB23XwW12v9kOkwqRb5CCQh1_WaOi-"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm font-label-sm text-label-sm font-semibold text-primary transition-transform duration-300 group-hover:scale-105">Diagnóstico Cutáneo</span>
+</div>
+<div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Duración: 60 - 90 min</span>
+<span class="text-bronze-accent font-semibold">Antiedad &amp; Higiene</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Tratamientos Faciales</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Limpiezas de cutis profundas con extracción higiénica, <strong class="text-on-surface font-semibold">terapias de colágeno bioidéntico, reafirmación oval</strong> y programas específicos para el contorno de ojos, devolviendo luz y tersura al rostro.
+              </p>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-surface-container-lowest font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:scale-105 active:scale-95 transition-all duration-300 group/btn" href="#reserva-rapida">
+<span>Reservar Servicio</span>
+<span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Cosmética bio</span>
+</div>
+</div>
+</article>
+<!-- 6. Tratamientos de Pestañas -->
+<article class="service-card group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col reveal-on-scroll" data-category="facial" style="transition-delay: 150ms;">
+<div class="relative h-56 w-full overflow-hidden bg-surface-sand-subtle">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Close up of a serene woman's closed eyes showcasing natural elegant lash lift and tint with perfect curvature and defined eyelashes in warm soft ambient light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVEq-KOJUURo0Gb-01N_qZaNYXe99X4HYS6DDGLWSDTeRvJgDK5HWEotNqJd-VlwGr4SvZvwPMUlV9TZmZGPYJtG-nI4IFyQDa03Rfa6vRIaAfGUBc4wZYC2NhARR9tZHQ7P0PpdDn0gJi7wWSM8jdTZVC8lM8d5VnyiAYDq-W5qPCfE3jUrzsRn1nD3pW6OB1BPo63V4kJR4c-C0ilw_WB8oO0FT7HyIDhFl_nFf_NeVZvU52SfQ_"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm font-label-sm text-label-sm font-semibold text-primary transition-transform duration-300 group-hover:scale-105">Mirada Radiante</span>
+</div>
+<div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Duración: 45 - 60 min</span>
+<span class="text-bronze-accent font-semibold">Lifting &amp; Tinte</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Tratamientos de Pestañas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Resalta la belleza innata de tu mirada con nuestro servicio de <strong class="text-on-surface font-semibold">lifting de pestañas, permanente, mantenimiento y tinte de queratina</strong> para una curvatura y longitud seductoras sin máscara.
+              </p>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-surface-container-lowest font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:scale-105 active:scale-95 transition-all duration-300 group/btn" href="#reserva-rapida">
+<span>Reservar Servicio</span>
+<span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Efecto 6-8 semanas</span>
+</div>
+</div>
+</article>
+<!-- 7. Aparatología Avanzada (Card destacada doble en tablet/desktop) -->
+<article class="service-card group lg:col-span-3 bg-gradient-to-br from-primary to-primary-container rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-teal-300/20 hover:-translate-y-2 transition-all duration-500 text-surface-container-lowest reveal-on-scroll" data-category="aparatologia"><div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 lg:p-12"><div class="lg:col-span-7 space-y-4"><span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container-lowest/20 font-label-sm text-label-sm uppercase tracking-wider text-on-primary">Tecnología Médica de Vanguardia</span><h3 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-surface-container-lowest">Aparatología Estética: TermoBeauty, EndoSpheras &amp; Presoterapia</h3><p class="font-body-lg text-body-lg text-surface-container-lowest/90 leading-relaxed">Resultados clínicamente probados desde la primera sesión para reducir grasa localizada, reafirmar tejidos profundos, eliminar celulitis, mejorar la circulación periférica y aliviar sobrecargas musculares de manera no invasiva.</p><div class="flex flex-wrap gap-3 pt-2"><span class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest/15 text-xs font-semibold hover:bg-surface-container-lowest/25 transition-colors cursor-default">EndoSpheras Original</span><span class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest/15 text-xs font-semibold hover:bg-surface-container-lowest/25 transition-colors cursor-default">TermoBeauty Reafirmante</span><span class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest/15 text-xs font-semibold hover:bg-surface-container-lowest/25 transition-colors cursor-default">Presoterapia Médica</span></div><div class="pt-4 flex flex-wrap items-center gap-4"><a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md font-bold hover:bg-surface-sand-light hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm" href="#aparatologia-detalle"><span>Descubrir Toda la Aparatología</span><span class="material-symbols-outlined text-[18px]">read_more</span></a><a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold hover:bg-secondary-fixed-dim hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm" href="#reserva-rapida"><span>Cita Diagnóstico Gratuita</span></a></div></div><div class="lg:col-span-5"><div class="rounded-2xl overflow-hidden aspect-[4/3] shadow-lg"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Close up of medical grade EndoSpheras therapy cylinder handpiece with silicone micro-spheres gently treating body contours in a high-tech modern aesthetic studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJJkbTZDWtPFeqUhhPRJGfREFzuhzOnIRIaUYxWaPR1PeFo2GCUT5gFAUJp8uU1dgh3BZcymlTcJ86RyFh8P4Ej_lNAAxo9TVJVNMgLQ6OhL5OCU-XYAH4DBaqorltqIalalCaUba30jui1K3r4TFE4pHW1i_4jjU9nFqbZhKPIqdJdy6dkX6fAjlHzkHjS7389p-aTHkK55--f5x5z4kIZfTGMM_uBI1Hjz3JQFpnKCUf8xjDcd3o"/></div></div></div></article>
+</div>
+</div>
+</section>
+<!-- SECCIÓN ESPECIAL: APARATOLOGÍA AVANZADA & RESULTADOS (FOCO TECNOLÓGICO) -->
+<section class="w-full bg-surface-sand-subtle py-20 md:py-28 relative" id="aparatologia-detalle">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll">
+<span class="font-label-sm text-label-sm text-bronze-accent font-semibold uppercase tracking-widest">Ciencia y Eficacia Demostrada</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Aparatología de Alta Gama en Inca</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Soluciones corporales y faciales seguras, no invasivas y con respaldo clínico para remodelar, tonificar y revitalizar.</p>
+</div>
+<!-- 3 Dispositivos Clave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<!-- 1. EndoSpheras Therapy -->
+<div class="reveal-on-scroll bg-surface-container-lowest rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between group" style="transition-delay: 50ms;">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-surface-container-lowest group-hover:rotate-6 transition-all duration-300">
+<span class="material-symbols-outlined text-[26px]">all_inclusive</span>
+</div>
+<span class="font-label-sm text-label-sm text-bronze-accent uppercase font-bold tracking-wider">Microvibración Compresiva</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">EndoSpheras Therapy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Actúa directamente sobre las causas de la celulitis y la flacidez. Reactiva la microcirculación, drena líquidos intersticiales, remodela la silueta y descontractura dolores de espalda y cuello.
+            </p>
+<ul class="space-y-2 text-on-surface-variant font-body-sm text-body-sm pt-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Drenaje linfático acelerado</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Alisado visible de piel de naranja</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Tonificación muscular indolora</li>
+</ul>
+</div>
+<div class="pt-8 mt-6">
+<div class="p-4 rounded-xl bg-surface-sand-light text-center group-hover:bg-primary/5 transition-colors duration-300">
+<span class="font-headline-md text-headline-md text-primary font-bold block">-2 a -4 cm</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reducción media tras protocolo completo</span>
+</div>
+</div>
+</div>
+<!-- 2. TermoBeauty -->
+<div class="reveal-on-scroll bg-surface-container-lowest rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between group" style="transition-delay: 150ms;">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/50 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-surface-container-lowest group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-[26px]">heat</span>
+</div>
+<span class="font-label-sm text-label-sm text-bronze-accent uppercase font-bold tracking-wider">Termoterapia Activa</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">TermoBeauty</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Aprovecha la energía térmica controlada para estimular la síntesis de nuevas fibras de colágeno y elastina, produciendo una regeneración dérmica inmediata y una reducción del tejido adiposo resistente.
+            </p>
+<ul class="space-y-2 text-on-surface-variant font-body-sm text-body-sm pt-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Efecto lifting reafirmante corporal</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Dilución de nódulos grasos</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Oxigenación celular intensiva</li>
+</ul>
+</div>
+<div class="pt-8 mt-6">
+<div class="p-4 rounded-xl bg-surface-sand-light text-center group-hover:bg-secondary-fixed/30 transition-colors duration-300">
+<span class="font-headline-md text-headline-md text-primary font-bold block">+85%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sensación de firmeza y elasticidad cutánea</span>
+</div>
+</div>
+</div>
+<!-- 3. Presoterapia Médica -->
+<div class="reveal-on-scroll bg-surface-container-lowest rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between group" style="transition-delay: 250ms;">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center group-hover:bg-tertiary group-hover:text-surface-container-lowest group-hover:-rotate-6 transition-all duration-300">
+<span class="material-symbols-outlined text-[26px]">waves</span>
+</div>
+<span class="font-label-sm text-label-sm text-bronze-accent uppercase font-bold tracking-wider">Compresión Gradual</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Presoterapia Secuencial</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              El tratamiento insustituible para piernas cansadas, edemas y retención de líquidos. Masaje neumático dosificado que reactiva el retorno venoso, elimina toxinas y deja una sensación inmediata de ligereza.
+            </p>
+<ul class="space-y-2 text-on-surface-variant font-body-sm text-body-sm pt-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Alivio inmediato de pesadez en piernas</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Eliminación eficaz de toxinas</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Complemento ideal post-entreno o post-parto</li>
+</ul>
+</div>
+<div class="pt-8 mt-6">
+<div class="p-4 rounded-xl bg-surface-sand-light text-center group-hover:bg-primary/5 transition-colors duration-300">
+<span class="font-headline-md text-headline-md text-primary font-bold block">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sensación de ligereza tras la primera sesión</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner de Diagnóstico -->
+<div class="reveal-on-scroll bg-surface-container-lowest rounded-3xl p-8 md:p-10 shadow-sm hover:shadow-md border border-primary/10 flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-300">
+<div class="space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-primary">¿No sabes qué tecnología es la más idónea para tu caso?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Realizamos un diagnóstico corporal o facial gratuito y sin compromiso de 20 minutos en nuestro centro en Inca.</p>
+</div>
+<a class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-primary text-surface-container-lowest font-label-md text-label-md font-semibold hover:bg-primary-container hover:scale-105 active:scale-95 hover:ring-4 hover:ring-teal-500/20 transition-all duration-300 whitespace-nowrap shadow-sm" href="tel:971500601">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Llamar al 971 500 601</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECCIÓN ESPECIAL: SERVICIO A DOMICILIO EXCEPCIONAL -->
+<section class="w-full bg-surface-sand-light py-20 md:py-28 relative overflow-hidden" id="servicio-a-domicilio">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="reveal-on-scroll bg-gradient-to-r from-primary-container via-primary to-tertiary rounded-3xl shadow-xl overflow-hidden text-surface-container-lowest transition-all duration-500 hover:shadow-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 md:p-14 lg:p-16">
+<div class="lg:col-span-7 space-y-6">
+<span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/20 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-semibold tracking-wide hover:bg-surface-container-lowest/30 transition-colors">
+<span class="material-symbols-outlined text-[16px] animate-pulse">home_pin</span>
+              Exclusivo en Inca y comarca del Raiguer
+            </span>
+<h2 class="font-headline-lg text-headline-lg font-semibold tracking-tight leading-snug">
+              Servicio a Domicilio Excepcional
+            </h2>
+<p class="font-body-lg text-body-lg text-surface-container-lowest/90 leading-relaxed">
+              Sabemos que la comodidad y la accesibilidad son fundamentales, especialmente para aquellas personas que presentan <strong class="text-surface-container-lowest font-bold underline">dificultades de movilidad</strong>, para <strong class="text-surface-container-lowest font-bold">personas mayores</strong> o en caso de ocasiones especiales irrepetibles como bodas y comuniones.
+            </p>
+<!-- Cita textual original reforzada -->
+<blockquote class="p-6 rounded-2xl bg-surface-container-lowest/10 backdrop-blur-md relative space-y-2 border border-white/10 hover:border-white/20 transition-all duration-300">
+<span class="material-symbols-outlined text-secondary-fixed text-[36px] opacity-70">format_quote</span>
+<p class="font-headline-sm text-headline-sm italic font-normal text-surface-container-lowest leading-relaxed">
+                "Ya sea que sea una persona mayor, tenga poca movilidad o esté buscando prepararse para una ocasión especial, nuestro equipo se asegurará de brindarle una experiencia de belleza personalizada y de alta calidad en la tranquilidad de su propio hogar."
+              </p>
+</blockquote>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+<a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-whatsapp-green text-surface-container-lowest font-label-md text-label-md font-bold hover:opacity-95 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg transition-all duration-300" href="https://wa.me/34971500601?text=Hola,%20quisiera%20solicitar%20información%20sobre%20el%20servicio%20a%20domicilio%20en%20Mallorca" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Coordinar Visita a Domicilio</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md font-bold hover:bg-surface-sand-light hover:scale-105 active:scale-95 transition-all duration-300" href="tel:971500601">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>971 500 601</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative group">
+<div class="relative rounded-2xl overflow-hidden aspect-square shadow-2xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Tender and respectful senior woman receiving gentle in-home hand care and manicure from an experienced caring aesthetician in a bright cozy home in Mallorca." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9VaE7C4fr3fPz-l2y7fATg2NeQ2QHGuf4MQrRFh-k1upwAXRFYcBAFhaVysecPpTg5ZidShbKCD_WGeq6sDSOENGN6bl_9esqnOBxBWle6N1U3XbxjjOo3jCuSmnHhpEzFLC7uAZHjK3Wc7yJUcIKeDR2-Z-rjLmni0jX-6GEvi_Ksd9aCkg646oRESn8mL3Jo_N9sYB8NHzQhVCx0UYZXSOwh8jFkdrX10Mh0V7By9PB-nThFB6E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 text-surface-container-lowest">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed font-semibold">Atención con cariño</span>
+<p class="font-body-md text-body-md font-medium">Llevamos todo el material esterilizado y el confort de nuestra cabina a tu salón.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN HISTORIA Y EXPERIENCIA: 23 AÑOS CUIDANDO DE TI -->
+<section class="w-full bg-surface-sand-subtle py-20 md:py-32" id="sobre-nosotros">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Imagen / Composición Artesanal -->
+<div class="lg:col-span-5 order-2 lg:order-1 relative reveal-on-scroll">
+<div class="relative rounded-3xl overflow-hidden shadow-xl aspect-[3/4] bg-surface-container-lowest group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Portrait of Ana and aesthetic team welcoming clients with warm smiles in their beautifully curated beauty salon in Inca Mallorca with botanical interior accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-0HNifQyxwdHMOXW97nRNQlLc1wLN7KtLYpDXA8oaRVjcUmE5P5Ti0t7FTClgmpoRqUB59F9wjzcTAexk8wJPaVlxHQ_RXfwSS_B_ocx82ufoqbDwcPqK_xklZKXZFhfqMyi-MQ2er8jff1SQXO5vxhoH24NwB3yD-Kujtxftj_cyoFwH5BN4iQtNfhxk-ycSs321bUz6JpJjbda-7JRVSkugJsrtPG0pn7Ev0i83Xlc0aDKDRrzI"/>
+</div>
+<!-- Medalla superpuesta with float -->
+<div class="absolute -bottom-8 -right-4 md:right-8 bg-surface-container-lowest p-6 rounded-2xl shadow-xl max-w-xs flex items-center gap-4 animate-float border border-primary/10">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-headline-md font-bold text-headline-md shrink-0">
+              23
+            </div>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary">Años de Trayectoria</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cuidando de tres generaciones de familias en Inca.</p>
+</div>
+</div>
+</div>
+<!-- Texto Narrativa -->
+<div class="lg:col-span-7 order-1 lg:order-2 space-y-6 reveal-on-scroll" style="transition-delay: 150ms;">
+<span class="font-label-sm text-label-sm text-bronze-accent font-semibold uppercase tracking-widest">Nuestra Historia</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight leading-tight">
+            Brindamos servicios de cuidado personal desde hace <span class="italic font-normal">23 años en Mallorca</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            En <strong class="text-primary font-semibold">Centre d'Estètica ANA</strong> nos apasiona ayudar a nuestros clientes a verse y sentirse mejor. Nuestro equipo altamente capacitado y nuestra amplia gama de servicios nos convierten en la opción ideal para tu bienestar y armonía interior.
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Estamos comprometidos con tu satisfacción absoluta y esperamos darte la bienvenida en nuestro salón de belleza y estética. Cada tratamiento se precede de una escucha sincera para entender las necesidades concretas de tu piel, tu musculatura y tu ritmo de vida.
+          </p>
+<div class="grid grid-cols-2 gap-6 pt-4">
+<div class="space-y-1 p-3 rounded-xl hover:bg-surface-container-lowest/60 transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px]">verified</span>
+<p class="font-label-md text-label-md font-bold text-on-surface">Cosmética de Alta Gama</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ingredientes puros botánicos y formulaciones biotecnológicas seguras.</p>
+</div>
+<div class="space-y-1 p-3 rounded-xl hover:bg-surface-container-lowest/60 transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px]">groups</span>
+<p class="font-label-md text-label-md font-bold text-on-surface">Equipo Vocacional</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Formación continua en las técnicas dermoestéticas más avanzadas.</p>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-surface-container-lowest font-label-md text-label-md font-semibold hover:bg-primary-container hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm" href="#contacto-ubicacion">
+<span>Ven a Conocernos a Inca</span>
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MÓDULO INTERACTIVO DE RESERVA RÁPIDA / CALCULADORA -->
+<section class="w-full bg-surface-sand-light py-20 md:py-28 relative" id="reserva-rapida">
+<div class="max-w-5xl mx-auto px-6 lg:px-12">
+<div class="bg-surface-container-lowest rounded-3xl p-8 md:p-14 shadow-lg border border-primary/5 relative reveal-on-scroll">
+<div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+<span class="font-label-sm text-label-sm text-bronze-accent font-semibold uppercase tracking-widest">Atención Rápida</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Solicita tu Cita Previa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Elige tu tratamiento preferido, tu horario ideal y nos pondremos en contacto contigo de inmediato para confirmar tu reserva.</p>
+</div>
+<form class="space-y-8" id="booking-form"><div class="space-y-3"><div class="flex items-center justify-between"><label class="font-label-md text-label-md font-semibold text-on-surface block">1. Selecciona el servicio principal:</label><span class="font-label-sm text-label-sm text-primary font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-whatsapp-green">check_circle</span> Selecciona una opción</span></div><div class="grid grid-cols-2 sm:grid-cols-4 gap-3"><label class="cursor-pointer group"><input checked="" class="peer sr-only" name="service-choice" type="radio" value="Terapias Naturales (Reiki/Barras)"/><div class="p-3.5 rounded-xl bg-surface-sand-light text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary peer-checked:text-surface-container-lowest group-hover:scale-102 transition-all duration-300 shadow-2xs"><span class="material-symbols-outlined text-[22px] block mb-1 group-hover:scale-110 transition-transform">spa</span><span class="font-label-sm text-label-sm font-semibold">Terapias</span></div></label><label class="cursor-pointer group"><input class="peer sr-only" name="service-choice" type="radio" value="Aparatología (EndoSpheras/TermoBeauty)"/><div class="p-3.5 rounded-xl bg-surface-sand-light text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary peer-checked:text-surface-container-lowest group-hover:scale-102 transition-all duration-300 shadow-2xs"><span class="material-symbols-outlined text-[22px] block mb-1 group-hover:scale-110 transition-transform">precision_manufacturing</span><span class="font-label-sm text-label-sm font-semibold">Aparatología</span></div></label><label class="cursor-pointer group"><input class="peer sr-only" name="service-choice" type="radio" value="Tratamiento Facial / Colágeno"/><div class="p-3.5 rounded-xl bg-surface-sand-light text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary peer-checked:text-surface-container-lowest group-hover:scale-102 transition-all duration-300 shadow-2xs"><span class="material-symbols-outlined text-[22px] block mb-1 group-hover:scale-110 transition-transform">face</span><span class="font-label-sm text-label-sm font-semibold">Facial</span></div></label><label class="cursor-pointer group"><input class="peer sr-only" name="service-choice" type="radio" value="Masajes Terapéuticos"/><div class="p-3.5 rounded-xl bg-surface-sand-light text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary peer-checked:text-surface-container-lowest group-hover:scale-102 transition-all duration-300 shadow-2xs"><span class="material-symbols-outlined text-[22px] block mb-1 group-hover:scale-110 transition-transform">self_improvement</span><span class="font-label-sm text-label-sm font-semibold">Masajes</span></div></label><label class="cursor-pointer group"><input class="peer sr-only" name="service-choice" type="radio" value="Manos y Pies Spa"/><div class="p-3.5 rounded-xl bg-surface-sand-light text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary peer-checked:text-surface-container-lowest group-hover:scale-102 transition-all duration-300 shadow-2xs"><span class="material-symbols-outlined text-[22px] block mb-1 group-hover:scale-110 transition-transform">front_hand</span><span class="font-label-sm text-label-sm font-semibold">Manos / Pies</span></div></label><label class="cursor-pointer group"><input class="peer sr-only" name="service-choice" type="radio" value="Depilación Láser o Cera"/><div class="p-3.5 rounded-xl bg-surface-sand-light text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary peer-checked:text-surface-container-lowest group-hover:scale-102 transition-all duration-300 shadow-2xs"><span class="material-symbols-outlined text-[22px] block mb-1 group-hover:scale-110 transition-transform">flash_on</span><span class="font-label-sm text-label-sm font-semibold">Depilación</span></div></label><label class="cursor-pointer group"><input class="peer sr-only" name="service-choice" type="radio" value="Lifting o Tinte de Pestañas"/><div class="p-3.5 rounded-xl bg-surface-sand-light text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary peer-checked:text-surface-container-lowest group-hover:scale-102 transition-all duration-300 shadow-2xs"><span class="material-symbols-outlined text-[22px] block mb-1 group-hover:scale-110 transition-transform">visibility</span><span class="font-label-sm text-label-sm font-semibold">Pestañas</span></div></label><label class="cursor-pointer group"><input class="peer sr-only" name="service-choice" type="radio" value="Servicio Especial a Domicilio"/><div class="p-3.5 rounded-xl bg-surface-sand-light text-center border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary peer-checked:text-surface-container-lowest group-hover:scale-102 transition-all duration-300 shadow-2xs"><span class="material-symbols-outlined text-[22px] block mb-1 group-hover:scale-110 transition-transform">home</span><span class="font-label-sm text-label-sm font-semibold">A Domicilio</span></div></label></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="space-y-2"><div class="flex items-center justify-between"><label class="font-label-md text-label-md font-semibold text-on-surface" for="client-name">Nombre y Apellidos</label><span class="font-label-sm text-label-sm text-primary font-medium">Requerido</span></div><input class="w-full px-4 py-3 rounded-xl bg-surface-sand-light text-on-surface border border-transparent focus:outline-none focus:bg-surface-container-lowest focus:ring-4 focus:ring-primary/20 focus:border-primary text-body-md font-body-md transition-all duration-300" id="client-name" placeholder="Ej: María Antonia Soler" required="" type="text"/></div><div class="space-y-2"><div class="flex items-center justify-between"><label class="font-label-md text-label-md font-semibold text-on-surface" for="client-phone">Teléfono / WhatsApp</label><span class="font-label-sm text-label-sm text-whatsapp-green font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">lock</span> Contacto seguro</span></div><input class="w-full px-4 py-3 rounded-xl bg-surface-sand-light text-on-surface border border-transparent focus:outline-none focus:bg-surface-container-lowest focus:ring-4 focus:ring-primary/20 focus:border-primary text-body-md font-body-md transition-all duration-300" id="client-phone" placeholder="Ej: 600 000 000" required="" type="tel"/></div><div class="space-y-2"><label class="font-label-md text-label-md font-semibold text-on-surface" for="client-date">Fecha Preferida</label><input class="w-full px-4 py-3 rounded-xl bg-surface-sand-light text-on-surface border border-transparent focus:outline-none focus:bg-surface-container-lowest focus:ring-4 focus:ring-primary/20 focus:border-primary text-body-md font-body-md transition-all duration-300" id="client-date" type="date"/></div><div class="space-y-2"><label class="font-label-md text-label-md font-semibold text-on-surface" for="client-time">Franja Horaria Deseada</label><select class="w-full px-4 py-3 rounded-xl bg-surface-sand-light text-on-surface border border-transparent focus:outline-none focus:bg-surface-container-lowest focus:ring-4 focus:ring-primary/20 focus:border-primary text-body-md font-body-md transition-all duration-300" id="client-time"><option value="Mañana (09:30 - 13:30)">Mañanas (09:30h - 13:30h)</option><option value="Tarde (16:00 - 20:00)">Tardes (16:00h - 20:00h)</option><option value="Sábado (09:00 - 15:00)">Sábado mañana (09:00h - 15:00h)</option><option value="Indiferente">Indiferente / Lo antes posible</option></select></div></div><div class="space-y-2"><label class="font-label-md text-label-md font-semibold text-on-surface" for="client-notes">Notas adicionales o consulta específica (opcional)</label><textarea class="w-full px-4 py-3 rounded-xl bg-surface-sand-light text-on-surface border border-transparent focus:outline-none focus:bg-surface-container-lowest focus:ring-4 focus:ring-primary/20 focus:border-primary text-body-md font-body-md transition-all duration-300" id="client-notes" placeholder="Cuéntanos si tienes alguna duda, dolor muscular, alergia o si solicitas servicio a domicilio..." rows="2"></textarea></div><div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-4"><div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px] text-whatsapp-green animate-pulse">check_circle</span><span>Confirmación personalizada por WhatsApp o llamada.</span></div><div class="flex items-center gap-3"><button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-primary text-surface-container-lowest font-label-md text-label-md font-bold hover:bg-primary-container hover:scale-105 active:scale-95 hover:ring-4 hover:ring-teal-500/20 transition-all duration-300 shadow-md group" type="submit"><span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:translate-x-1">send</span><span>Enviar Solicitud de Cita</span></button></div></div></form>
+<!-- Estado de Confirmación en JS con animación suave -->
+<div class="hidden mt-6 p-6 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center gap-4 transition-all duration-500" id="booking-confirmation">
+<span class="material-symbols-outlined text-[32px] text-primary shrink-0 animate-bounce">check_circle</span>
+<div>
+<p class="font-label-lg text-label-lg font-bold">¡Solicitud recibida con éxito!</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Nos pondremos en contacto contigo por teléfono o WhatsApp para confirmar tu cita. ¡Muchas gracias por confiar en Ana!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIOS Y RESEÑAS REALES DE MALLORCA -->
+<section class="w-full bg-surface-sand-subtle py-20 md:py-28">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal-on-scroll">
+<span class="font-label-sm text-label-sm text-bronze-accent font-semibold uppercase tracking-widest">Opiniones de Nuestras Clientas</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Confianza construida sesión a sesión</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">La satisfacción de quienes nos visitan en Inca desde hace más de dos décadas es nuestra mayor recompensa.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonio 1 -->
+<div class="reveal-on-scroll bg-surface-container-lowest p-8 rounded-3xl shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between space-y-6" style="transition-delay: 50ms;">
+<div class="space-y-4">
+<div class="flex items-center gap-1 text-bronze-accent">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md italic text-on-surface leading-relaxed">
+              "Llevo más de 12 años viniendo con Ana. Lo que más valoro es su puntualidad exquisita y el trato tan cariñoso y cercano. El tratamiento de EndoSpheras y los masajes de espalda me han cambiado la vida."
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary font-bold font-label-md transition-transform duration-300 hover:scale-110">
+              M
+            </div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Margalida Bennàssar</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Clienta en Inca • Tratamiento EndoSpheras</p>
+</div>
+</div>
+</div>
+<!-- Testimonio 2 -->
+<div class="reveal-on-scroll bg-surface-container-lowest p-8 rounded-3xl shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between space-y-6" style="transition-delay: 150ms;">
+<div class="space-y-4">
+<div class="flex items-center gap-1 text-bronze-accent">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md italic text-on-surface leading-relaxed">
+              "Solicitamos el servicio a domicilio para mi madre mayor y no podemos estar más agradecidas. La trataron con una delicadeza y paciencia infinita. Es un servicio indispensable que no encuentras fácilmente."
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-4">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold font-label-md transition-transform duration-300 hover:scale-110">
+              C
+            </div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Catalina Rosselló</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inca • Servicio a Domicilio Familiar</p>
+</div>
+</div>
+</div>
+<!-- Testimonio 3 -->
+<div class="reveal-on-scroll bg-surface-container-lowest p-8 rounded-3xl shadow-sm hover:shadow-2xl border border-transparent hover:border-teal-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between space-y-6" style="transition-delay: 250ms;">
+<div class="space-y-4">
+<div class="flex items-center gap-1 text-bronze-accent">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md italic text-on-surface leading-relaxed">
+              "El lifting de pestañas y las limpiezas de cutis con colágeno son insuperables. Salgo siempre con una sensación de paz maravillosa y la piel luminosa. Ana te hace sentir en familia desde el minuto uno."
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-4">
+<div class="w-10 h-10 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary font-bold font-label-md transition-transform duration-300 hover:scale-110">
+              L
+            </div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Laura Femenías</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lloseta / Inca • Facial &amp; Pestañas</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- UBICACIÓN, HORARIOS Y CONTACTO DIRECTO -->
+<section class="w-full bg-surface-sand-light py-20 md:py-28" id="contacto-ubicacion">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Columna Datos de Contacto -->
+<div class="lg:col-span-5 space-y-8 reveal-on-scroll">
+<div class="space-y-3">
+<span class="font-label-sm text-label-sm text-bronze-accent font-semibold uppercase tracking-widest">Encuéntranos en Inca</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Tu cita con el bienestar te espera</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Estamos ubicados en una zona accesible de Inca, con facilidad de aparcamiento y un entorno tranquilo para tu relajación.</p>
+</div>
+<div class="space-y-6">
+<!-- Dirección -->
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md border border-transparent hover:border-teal-400/30 hover:-translate-y-1 transition-all duration-300">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">location_on</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Dirección</p>
+<p class="font-body-md text-body-md text-on-surface-variant">C/ Vicenç Ensenyat, 35</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">07300 Inca, Illes Balears, España</p>
+</div>
+</div>
+<!-- Teléfono Directo -->
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md border border-transparent hover:border-teal-400/30 hover:-translate-y-1 transition-all duration-300">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">call</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Teléfono Fijo &amp; Citas</p>
+<a class="font-headline-sm text-headline-sm text-primary font-bold hover:underline block" href="tel:971500601">971 500 601</a>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Atención telefónica directa en horario comercial</span>
+</div>
+</div>
+<!-- WhatsApp Directo -->
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md border border-transparent hover:border-teal-400/30 hover:-translate-y-1 transition-all duration-300">
+<div class="w-10 h-10 rounded-xl bg-whatsapp-green/10 text-whatsapp-green flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Chat WhatsApp</p>
+<a class="font-body-md text-body-md text-whatsapp-green font-semibold hover:underline block" href="https://wa.me/34971500601" rel="noopener noreferrer" target="_blank">
+                  Iniciar conversación rápida por WhatsApp
+                </a>
+</div>
+</div>
+<!-- Horarios Oficiales -->
+<div class="p-6 rounded-2xl bg-surface-sand-subtle space-y-3 border border-primary/5">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+<span>Horario de Atención al Público</span>
+</div>
+<div class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex justify-between py-1">
+<span>Martes a Viernes:</span>
+<span class="font-semibold text-on-surface">09:30h – 20:00h (Ininterrumpido)</span>
+</div>
+<div class="flex justify-between py-1">
+<span>Sábados:</span>
+<span class="font-semibold text-on-surface">09:00h – 16:00h</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant/70">
+<span>Domingos y Lunes:</span>
+<span class="italic">Cerrado por descanso</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Columna Mapa / Visualizador de Ubicación Inca -->
+<div class="lg:col-span-7 reveal-on-scroll" style="transition-delay: 150ms;">
+<div class="bg-surface-container-lowest p-4 rounded-3xl shadow-md border border-primary/5 space-y-4 hover:shadow-xl transition-shadow duration-300">
+<div class="w-full h-96 bg-cover bg-center rounded-2xl relative overflow-hidden group" data-location="Carrer de Vicenç Ensenyat, 35, 07300 Inca, Illes Balears, Spain" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBqCyWIcFDLt2NVF55b--2r09TgRT40ysoOUIZntcH8bXpWIOpU3okkY5NmoUmezp5G5IkVjQPIetj3hpHYBaHBf_aySaK0whZH-QC0B-mNx11GeG8PN6b14iU7H-8vbzKC4bEhaV38MyiR5Xd-0TK13QiGPoggp29Hd5hpEWrmjP1wf4GSOAJav39vZer2LM4jvltItd48B6XVMeNHntOTEvtarlUbc83TU52cE4K0CBMcW1Cf0VZl')">
+<!-- Pin Card Overlay -->
+<div class="absolute bottom-6 left-6 p-4 rounded-xl bg-surface-container-lowest/95 backdrop-blur-md shadow-lg max-w-xs transition-transform duration-300 hover:scale-105 border border-white/40">
+<div class="flex items-center gap-2 text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">pin_drop</span>
+<span class="font-label-md text-label-md font-bold">Centre d'Estètica ANA</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">C/ Vicenç Ensenyat, 35 - Inca</p>
+<a class="mt-2 inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold hover:underline" href="https://maps.google.com/?q=Carrer+de+Vicenç+Ensenyat,+35,+07300+Inca,+Illes+Balears" rel="noopener noreferrer" target="_blank">
+<span>Cómo llegar en Google Maps</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between text-xs text-on-surface-variant px-2 pt-1">
+<span>📍 A 5 minutos a pie de la estación de tren de Inca.</span>
+<span class="text-primary font-semibold">Cita previa recomendada</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA FINAL DE IMPACTO -->
+<section class="w-full bg-primary text-surface-container-lowest py-16 relative overflow-hidden">
+<div class="max-w-5xl mx-auto px-6 text-center space-y-6 relative z-10 reveal-on-scroll">
+<h2 class="font-headline-lg text-headline-lg font-semibold tracking-tight">Dedícate el tiempo y cuidado que mereces</h2>
+<p class="font-body-lg text-body-lg text-surface-container-lowest/90 max-w-2xl mx-auto leading-relaxed">
+        Ponte en manos de un equipo profesional con más de 23 años de experiencia en Inca, Mallorca. Reserva tu cita online o llámanos hoy mismo.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+<a class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-surface-container-lowest text-primary font-label-lg text-label-lg font-bold hover:bg-surface-sand-light hover:scale-105 active:scale-95 hover:shadow-2xl transition-all duration-300 shadow-lg" href="#reserva-rapida">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span>Pedir Cita Online</span>
+</a>
+<a class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-lg text-label-lg font-bold hover:bg-secondary-fixed-dim hover:scale-105 active:scale-95 hover:shadow-2xl transition-all duration-300 shadow-lg" href="tel:971500601">
+<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+<span>971 500 601</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- Floating Action WhatsApp Button with gentle attention pulse -->
+<div class="fixed bottom-6 right-6 z-50"><div class="relative group"><span class="absolute -top-1 -right-1 flex h-4 w-4 z-10"><span class="animate-pulse absolute inline-flex h-full w-full rounded-full bg-whatsapp-green opacity-70"></span><span class="relative inline-flex rounded-full h-4 w-4 bg-whatsapp-green border-2 border-surface-container-lowest"></span></span><a aria-label="Contactar por WhatsApp" class="flex items-center justify-center w-14 h-14 rounded-full bg-whatsapp-green text-surface-container-lowest shadow-2xl pulse-glow-whatsapp hover:scale-110 active:scale-95 transition-transform duration-300 group" href="https://wa.me/34971500601" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[30px] group-hover:rotate-12 transition-transform duration-200">chat</span></a></div></div>
+<!-- Micro-Interacciones en Vanilla JS (Filtro, Scroll Reveal & Envíos) -->
+<script>
+  // Intersection Observer para animaciones elegantes de entrada
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // Efecto glassmorphism sutil en scroll del navbar
+  const mainHeaderNav = document.getElementById('header-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      mainHeaderNav?.classList.add('shadow-md', 'bg-surface-container-lowest/95');
+      mainHeaderNav?.classList.remove('bg-surface-container-lowest/85');
+    } else {
+      mainHeaderNav?.classList.remove('shadow-md', 'bg-surface-container-lowest/95');
+      mainHeaderNav?.classList.add('bg-surface-container-lowest/85');
+    }
+  }, { passive: true });
+
+  // Filtro interactivo de servicios con animación suave
+  const filterBtns = document.querySelectorAll('.service-filter-btn');
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-surface-container-lowest', 'shadow-sm');
+        b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+      });
+      btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+      btn.classList.add('bg-primary', 'text-surface-container-lowest', 'shadow-sm');
+
+      const filter = btn.getAttribute('data-filter');
+
+      serviceCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+          }, 30);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(15px) scale(0.97)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+
+  // Envío interactivo de formulario de cita rápida
+  const bookingForm = document.getElementById('booking-form');
+  const confirmationMsg = document.getElementById('booking-confirmation');
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Animación suave de confirmación
+      bookingForm.classList.add('opacity-40', 'pointer-events-none');
+      confirmationMsg.classList.remove('hidden');
+      confirmationMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  }
+</script></main><footer class="w-full bg-surface-sand-subtle text-on-surface mt-20 pt-16 pb-8 shadow-[0_-4px_24px_rgba(15,118,110,0.03)]"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-3"><img alt="Centre d'Estètica ANA Logo" class="h-9 w-auto object-contain hover:rotate-2 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1V-W3dK2xZiX92CrUcSqxy9nkVUVDk7oJ2pHtBoOFNVS_jEmUZqIxLvVdjYHPdLXpqgVs8zP6iLqavUTvn0iiYml0g0hWipRuEU15iVGfxW4gHrMGl8KXKn-JhAQYPOBCK2J2SaArDvV6WJNtaFQaF1SxQFiqWsf0z2JejAWgoLo9VDFvrERX8FS4xpIARA9y1fZpgrZ11b_egGizSi9e_QzZPj01nQOWc6WPKtXtlJ1q4igJ8Imeit6r0"/><span class="font-headline-md text-headline-md font-semibold tracking-tight text-primary">Centre d'Estètica ANA</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Tu oasis de belleza, armonía y bienestar clínico en Inca, Mallorca desde 2001. Más de 23 años aunando terapias botánicas, tecnología estética de vanguardia y dedicación artesanal.</p><div class="flex items-center gap-3 pt-2"><a aria-label="Facebook" class="w-9 h-9 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary hover:scale-110 active:scale-95 transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a><a aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary hover:scale-110 active:scale-95 transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-[20px]">photo_camera</span></a><a aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-whatsapp-green flex items-center justify-center text-surface-container-lowest hover:opacity-90 hover:scale-110 active:scale-95 transition-all shadow-sm" href="https://wa.me/34971500601"><span class="material-symbols-outlined text-[20px]">chat</span></a></div></div><div class="space-y-3"><p class="font-label-lg text-label-lg text-primary font-semibold tracking-wide uppercase">Navegación</p><ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant"><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">chevron_right</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="inicio" href="#">Inicio</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">chevron_right</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="sobre-nosotros" href="#">Sobre Nosotros (23 años)</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">chevron_right</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="servicio-a-domicilio" href="#">Servicio a Domicilio</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">chevron_right</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="testimonios" href="#">Opiniones de Clientes</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">chevron_right</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="contacto" href="#">Ubicación y Contacto</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">chevron_right</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="reservar-cita" href="#">Pedir Cita Previa</a></li></ul></div><div class="space-y-3"><p class="font-label-lg text-label-lg text-primary font-semibold tracking-wide uppercase">Tratamientos</p><ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant"><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">spa</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="servicios" href="#">Terapias Naturales</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">flare</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="servicios" href="#">Tratamientos Faciales</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">self_improvement</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="servicios" href="#">Masajes Terapéuticos</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">auto_fix_high</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="aparatologia-avanzada" href="#">Aparatología Avanzada</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">check</span><a class="hover:text-primary hover:translate-x-1 transition-all duration-200" data-path="servicios" href="#">Depilación Láser &amp; Cera</a></li><li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-bronze-accent">visibility</span></li></ul></div></div></div></footer></body></html>
